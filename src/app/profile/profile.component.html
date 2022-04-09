@@ -1,0 +1,15 @@
+
+<div class="container">
+    <h1>Profile</h1>
+    <h4>User: {{username}}</h4>
+    <h3>Booking History</h3>
+    <hr>
+
+    <div *ngFor="let booking of bookings" class="listing-container">
+        <h4>Booking ID: {{booking.booking_id}}</h4>
+        <h4>Listing ID: {{booking.listing_id}}</h4>
+        <p><strong>Booking start: </strong>{{booking.booking_start}}</p>
+        <p><strong>Booking end: </strong>{{booking.booking_end}}</p>
+        <hr>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+
+<div class="container">
+  <h1>Search</h1>
+
+<form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2">
+
+      <input
+        [(ngModel)]="listTitle"
+        type="text"
+        class="form-control"
+        name="listTitle"
+        placeholder="Enter List"
+      />
+      <button (click)="search()" type="submit" class="btn btn-primary mb-2">
+        Search
+      </button>
+      <br>
+      <input type="radio"
+        name="category"
+        value="title"
+        [(ngModel)]="category" class="radio-input" required >Title
+      <input type="radio"
+      name="category"
+      value="city"
+      [(ngModel)]="category" required >City
+      <input type="radio"
+        name="category"
+        value="postalCode" class="radio-input"
+        [(ngModel)]="category" required >Postal Code
+    </div>
+    
+  </form>
+
+<br />
+<div *ngIf="loading">
+  Loading...
+</div>
+
+<div *ngIf="error" class="error"><p>{{error}}</p></div>
+<hr>
+<div *ngIf="error.length == 0">
+  <div class="listing-container" *ngFor="let listing of listings">
+    <h3>{{listing.listing_title}}</h3>
+    <p>{{listing.description}}</p>
+    <p><strong>Price</strong>: ${{listing.price}}</p>
+    <p><strong>Address</strong>: {{listing.street}} {{listing.city}} {{listing.postal_code}}</p>
+    <p><strong>Email</strong>: {{listing.email}}</p>
+    <button routerLink="/book/{{listing.listing_id}}">Book</button>
+    <hr>
+</div>
+</div>
+
+</div>

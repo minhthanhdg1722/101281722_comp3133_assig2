@@ -1,0 +1,18 @@
+<div *ngIf="error" class="error"><p>{{error}}</p></div>
+<div class="container">
+    <div class="booking-container card">
+        <h3>Choose your listing period </h3>
+        <div>
+            <label style="margin-right: 10px" for="startDate" >Start Date:</label>
+            <input type="date" [(ngModel)] = "startDate" name="startDate" required />
+        </div>
+        <div>
+            <label style="margin-right: 10px" for="endDate">End Date:</label>
+            <input type="date" [(ngModel)] = "endDate" name="endDate" required >
+        </div>
+        <br>
+        <button type="submit" (click)="book()">Book</button>
+    </div>
+</div>
+
+

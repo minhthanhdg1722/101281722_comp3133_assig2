@@ -1,0 +1,19 @@
+<div *ngIf="error" class="error"><p>{{error}}</p></div>
+<div class="container">
+    <h1 style="text-align: center;">Login</h1>
+    <form class="card" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="form-container">
+            <div class="input">
+                <label class="input-label" for="username">Username</label>
+                <input class="form-input" type="text" name="username" required placeholder="Enter Username" formControlName="username">
+            </div>
+            <div class="input">
+                <label class="input-label"  for="password">Password</label>
+                <input class="form-input" type="password" name="password" required formControlName="password"
+                placeholder="Enter Password">
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+        
+    </form>
+</div>

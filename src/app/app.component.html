@@ -1,0 +1,14 @@
+<nav>
+    <div>
+        <a routerLink="listing">Listing</a>
+        <a routerLink="search">Search</a>
+        <a routerLink="profile">Profile</a>
+        <a routerLink="list/add">Add New Listing</a>
+    </div>
+    <div>
+        <button *ngIf="isLoggedIn == 'true'" (click)="onLogout()">Log Out</button>
+    <a *ngIf="isLoggedIn == 'false'" routerLink="register">Register</a>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>

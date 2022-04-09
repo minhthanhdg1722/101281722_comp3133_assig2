@@ -1,0 +1,17 @@
+
+<div class="container">
+    <h1>Listings</h1>
+    <div *ngIf="loading">
+        Loading...
+    </div>
+    <hr>
+    <div class="listing-container" *ngFor="let listing of listings">
+        <h3>{{listing.listing_title}}</h3>
+        <p>{{listing.description}}</p>
+        <p><strong>Price</strong>: ${{listing.price}}</p>
+        <p><strong>Address</strong>: {{listing.street}} {{listing.city}} {{listing.postal_code}}</p>
+        <p><strong>Email</strong>: {{listing.email}}</p>
+        <button routerLink="/book/{{listing.listing_id}}">Book</button>
+        <hr>
+    </div>
+</div>
